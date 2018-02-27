@@ -1,7 +1,8 @@
 Package.describe({
-  name: "storyteller:accounts-wattpad",
-  summary: "Login service for Wattpad accounts",
-  version: "1.0.0"
+  name: 'storyteller:accounts-wattpad',
+  summary: 'Login service for Wattpad accounts',
+  version: '1.0.0',
+  git: 'https://github.com/StorytellerCZ/meteor-accounts-wattpad'
 });
 
 Package.onUse(api => {
@@ -15,7 +16,7 @@ Package.onUse(api => {
 
   // If users use accounts-ui but not facebook-config-ui, give them a tip.
   api.use(['accounts-ui', 'storyteller:wattpad-config-ui'], ['client', 'server'], { weak: true });
-  api.addFiles("notice.js");
+  api.addFiles('notice.js');
 
-  api.addFiles("wattpad.js");
+  api.addFiles('wattpad.js');
 });

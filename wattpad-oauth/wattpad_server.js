@@ -2,17 +2,16 @@ Wattpad = {};
 
 OAuth.registerService('wattpad', 2, null, query => {
   const response = getAccessToken(query);
-  const accessToken = response.token;
-  const expiresAt = +new Date() + 1000 * response.expires_in;
-  const identity = response.username;
+  const accessToken = response.auth.token;
+  const identity = response.auth.username;
 
   return {
     serviceData: {
-      id: identity.id,
-      accessToken,
-      expiresAt
+      id: identity, // Wattpad does not provide user id, so use username for now
+      authCode: query.code,
+      accessToken
     },
-    options: { profile: { name: response.username } }
+    options: { profile: { name: identity } }
   };
 });
 
@@ -26,7 +25,7 @@ const getAccessToken = query => {
       headers: { Accept: 'application/json' },
       params: {
         authCode: query.code,
-        apiKey: config.clientId,
+        apiKey: config.apiKey,
         secret: OAuth.openSecret(config.secret),
         redirect_uri: OAuth._redirectUri('wattpad', config),
         state: query.state

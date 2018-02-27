@@ -24,14 +24,16 @@ Wattpad.requestCredential = (options, credentialRequestCompleteCallback) => {
   const loginUrl =
     'https://www.wattpad.com/oauth/code' +
     `?api_key=${config.apiKey}` +
-    `&scope=read` +
-    `&redirect_uri=${OAuth._redirectUri('wattpad', config)}`;
+    `&scope=read` + // at this moment there is only one default scope available
+    `&redirect_uri=${OAuth._redirectUri('wattpad', config)}` +
+    `&state=${OAuth._stateParam(loginStyle, credentialToken, options && options.redirectUrl)}`;
 
   OAuth.launchLogin({
     loginService: 'wattpad',
     loginStyle,
     loginUrl,
     credentialRequestCompleteCallback,
-    credentialToken
+    credentialToken,
+    popupOptions: { width: 630, height: 732 }
   });
 };
