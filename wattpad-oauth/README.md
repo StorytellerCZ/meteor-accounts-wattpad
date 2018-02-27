@@ -1,3 +1,3 @@
-# facebook-oauth
+# wattpad-oauth
 
-An implementation of the Facebook OAuth flow. See the [Meteor Guide](https://guide.meteor.com/accounts.html) for more details.
+An implementation of the Wattpad OAuth flow. See the [Meteor Guide](https://guide.meteor.com/accounts.html) for more details.
