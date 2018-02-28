@@ -4,7 +4,6 @@ OAuth.registerService('wattpad', 2, null, query => {
   const response = getAccessToken(query);
   const accessToken = response.auth.token;
   const identity = response.auth.username;
-
   return {
     serviceData: {
       id: identity, // Wattpad does not provide user id, so use username for now
@@ -18,7 +17,6 @@ OAuth.registerService('wattpad', 2, null, query => {
 const getAccessToken = query => {
   const config = ServiceConfiguration.configurations.findOne({ service: 'wattpad' });
   if (!config) throw new ServiceConfiguration.ConfigError();
-
   let response;
   try {
     response = HTTP.post('https://api.wattpad.com/v4/auth/token?grantType=authorizationCode', {
@@ -27,8 +25,7 @@ const getAccessToken = query => {
         authCode: query.code,
         apiKey: config.apiKey,
         secret: OAuth.openSecret(config.secret),
-        redirect_uri: OAuth._redirectUri('wattpad', config),
-        state: query.state
+        redirectUri: OAuth._redirectUri('wattpad', config)
       }
     });
   } catch (err) {

@@ -1,3 +1,3 @@
-#facebook-config-ui
+# Wattpad-config-ui
 
-This package contains Blaze configuration UI templates for Facebook OAuth.
+This package contains Blaze configuration UI templates for Wattpad OAuth.
