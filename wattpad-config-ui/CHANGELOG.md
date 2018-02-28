@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.0.3 - 2018-02-28
+* Typo fix
+
 ## 1.0.2 - 2018-02-28
 * Make logo image smaller
 

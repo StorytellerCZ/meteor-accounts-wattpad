@@ -1,7 +1,7 @@
 Package.describe({
   name: 'storyteller:wattpad-config-ui',
   summary: 'Blaze configuration templates for Wattpad OAuth.',
-  version: '1.0.2',
+  version: '1.0.3',
   git: 'https://github.com/StorytellerCZ/meteor-accounts-wattpad'
 });
 
