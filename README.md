@@ -1,6 +1,8 @@
 # meteor-accounts-wattpad
 Authentication for Wattpad in Meteor.
 
+## IMPORTANT
+Wattpad has shutdown their API services including OAuth login. Hence these packages will not work as there is not service to connect to.
 
 ## Installation
 ```
