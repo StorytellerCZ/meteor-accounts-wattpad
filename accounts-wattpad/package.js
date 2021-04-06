@@ -1,8 +1,9 @@
 Package.describe({
   name: 'storyteller:accounts-wattpad',
   summary: 'Login service for Wattpad accounts',
-  version: '1.0.0-beta.0',
-  git: 'https://github.com/StorytellerCZ/meteor-accounts-wattpad'
+  version: '1.0.0-beta.1',
+  git: 'https://github.com/StorytellerCZ/meteor-accounts-wattpad',
+  deprecated: 'Wattpad has discontinued their OAuth API.'
 });
 
 Package.onUse(api => {
